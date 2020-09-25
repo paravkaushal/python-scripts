@@ -8,8 +8,8 @@ def file_organizer(mypath):
     file_type_variation_list=[]
     filetype_folder_dict={}
     for file in files:
-        filenamebrake=file.split('.')
-        filetype=filenamebrake[len(filenamebrake)-1]
+        filenamebreak=file.split('.')
+        filetype=filenamebreak[len(filenamebreak)-1]
         if filetype not in file_type_variation_list:
             file_type_variation_list.append(filetype)
             new_folder_name=mypath+'/'+ filetype + '_folder'
@@ -20,8 +20,8 @@ def file_organizer(mypath):
                 os.mkdir(new_folder_name)
     for file in files:
         src_path=mypath+'/'+file
-        filenamebrake=file.split('.')
-        filetype=filenamebrake[len(filenamebrake)-1]
+        filenamebreak=file.split('.')
+        filetype=filenamebreak[len(filenamebreak)-1]
         if filetype in filetype_folder_dict.keys():
             dest_path=filetype_folder_dict[str(filetype)]
             shutil.move(src_path,dest_path)
